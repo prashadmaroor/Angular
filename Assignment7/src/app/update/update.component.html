@@ -1,0 +1,100 @@
+<header>
+    <h1><strong>Update Form</strong></h1>	
+</header>
+
+
+
+<section>
+<form class="form-horizontal" [formGroup]="updateForm" (ngSubmit)="formHandler()" novalidate>
+
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="id">Id</label>
+        <input type="number" formControlName="id" class="form-control" id="userId" placeholder="Enter an Id">
+</div>  
+
+<div class="form-group">  
+    <label class="control-label col-sm-2" for="userId">User Id</label>
+    <div class="col-sm-5"
+     [ngClass]="{'has-error': updateForm.controls.userId.invalid && updateForm.controls.userId.dirty,
+                 'has-success': updateForm.controls.userId.valid  && updateForm.controls.userId.dirty }"  > 
+    <input type="number" formControlName="userId" class="form-control" id="userId" placeholder="Enter User Id"> 
+    </div> 
+    <div class="alert-danger col-sm-4" 
+     *ngIf="updateForm.controls.userId.invalid && updateForm.controls.userId.dirty"> 
+    User Id entered can only be numeric Value 
+    </div>  
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="title">Title</label>
+        <div class="col-sm-5" 
+        [ngClass]="{'has-error': updateForm.controls.title.invalid && updateForm.controls.title.dirty,
+                     'has-success': updateForm.controls.title.valid  && updateForm.controls.title.dirty }"  >
+        <input type="string" formControlName="title" class="form-control" id="title" placeholder="Enter the title">
+    </div> 
+    <div class="alert-danger col-sm-4" 
+    *ngIf="updateForm.controls.title.invalid && updateForm.controls.title.dirty"> 
+        Title cannot be blank and cannot contain special Characters
+    </div>           
+    </div>  
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="body">Body</label>
+            <div class="col-sm-5" [ngClass]="{'has-error': updateForm.controls.body.invalid && updateForm.controls.body.dirty,
+                                              'has-success': updateForm.controls.body.valid  && updateForm.controls.body.dirty }"  >
+            <input type="string" formControlName="body" class="form-control" id="body" placeholder="Enter the Body content">
+            </div>
+            <div class="alert-danger col-sm-4" 
+            *ngIf="updateForm.controls.body.invalid && updateForm.controls.body.dirty"> 
+             Body  contents cannot be blank and may have only alphanumeric Characters
+            </div>  
+        </div>  
+           
+
+        <div class="form-group"> 
+                <div class="col-sm-offset-3 col-sm-2">
+                  <button type="submit" [disabled]="updateForm.dirty == false " class="btn btn-secondary">Update</button>
+                  &nbsp; &nbsp;
+                 <a routerLink="GET/posts"> <button type="button" class="btn btn-btn">Cancel</button></a>
+                  </div>
+                </div>
+            </form>
+        </section>
+               
+                <footer>
+   
+                    <div class="container-fluid padding">
+                    <div class="row padding text-center">
+                      <div class="col-md-4">
+                          <hr class="hrTag">
+                          <h5> Author </h5>
+                        <hr class="hrTag">
+                        <p>Prasad Pai</p>
+                        <p>prashadmaroor12@gmail.com</p>
+                      </div>
+                      <div class="col-md-4">
+                          <hr class="hrTag">
+                          <h5>Working Days</h5>
+                          <hr class="hrTag">
+                          <p><strong>Monday-Friday:</strong> Open</p>
+                          <p><strong>Saturday-Sunday:</strong> Closed</p>
+                        </div>
+                        <div class="col-md-4">
+                            <hr class="hrTag">
+                            <h5>Work Locations</h5>
+                            <hr class="hrTag">
+                            <p>Mangaluru</p>
+                            <p>Kolkata</p>
+                          </div>
+                          <div class="col-12">
+                              <hr class="hrTag">
+                              <p>&copy; CopyRight 2018</p>
+                              <hr class="hrTag">
+                            </div>
+                </div>
+                </div>
+  </footer>              
+
+
+{{updateForm.controls.value  | json}}

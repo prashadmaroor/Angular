@@ -1,0 +1,105 @@
+<header>
+    <h1><strong>Registration Form</strong></h1>	
+</header>
+
+
+<section>
+<form class="form-horizontal" [formGroup]="jsonForm" (ngSubmit)="formHandler()" novalidate>
+
+
+<div class="form-group">  
+<label class="control-label col-sm-2" for="userId">User Id</label>
+  <div class="col-sm-5" [ngClass]="{'has-error': jsonForm.controls.userId.invalid && jsonForm.controls.userId.dirty,
+                                    'has-success': jsonForm.controls.userId.valid  && jsonForm.controls.userId.dirty }"  >
+    <input type="number" formControlName="userId" class="form-control" id="userId" placeholder="Enter User Id">
+</div>  
+<div class="alert-danger col-sm-4" 
+    *ngIf="jsonForm.controls.userId.invalid && jsonForm.controls.userId.dirty"> 
+User Id entered can only be numeric Value 
+</div>  
+</div>
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="id">Id</label>
+      <div class="col-sm-5" [ngClass]="{'has-error': jsonForm.controls.id.invalid && jsonForm.controls.id.dirty,
+                                        'has-success': jsonForm.controls.id.valid  && jsonForm.controls.id.dirty }"  >
+        <input type="number" formControlName="id" class="form-control" id="userId" placeholder="Enter an Id">
+    </div>  
+    <div class="alert-danger col-sm-4" 
+        *ngIf="jsonForm.controls.id.invalid && jsonForm.controls.id.dirty"> 
+    Id Should always be numeric
+    </div>  
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="title">Title</label>
+          <div class="col-sm-5" [ngClass]="{'has-error': jsonForm.controls.title.invalid && jsonForm.controls.title.dirty,
+                                            'has-success': jsonForm.controls.title.valid  && jsonForm.controls.title.dirty }"  >
+            <input type="string" formControlName="title" class="form-control" id="title" placeholder="Enter the title">
+        </div>  
+        <div class="alert-danger col-sm-4" 
+            *ngIf="jsonForm.controls.title.invalid && jsonForm.controls.title.dirty"> 
+       Title cannot be blank and cannot contain special Characters
+        </div>  
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="body">Body</label>
+              <div class="col-sm-5" [ngClass]="{'has-error': jsonForm.controls.body.invalid && jsonForm.controls.body.dirty,
+                                                'has-success': jsonForm.controls.body.valid  && jsonForm.controls.body.dirty }"  >
+                <input type="string" formControlName="body" class="form-control" id="body" placeholder="Enter the Body content">
+            </div>  
+            <div class="alert-danger col-sm-4" 
+                *ngIf="jsonForm.controls.body.invalid && jsonForm.controls.body.dirty"> 
+           Body  contents cannot be blank and may have only alphanumeric Characters
+            </div>  
+            </div>
+
+            <div class="form-group"> 
+                <div class="col-sm-offset-3 col-sm-2">
+                  <button type="submit" [disabled]="jsonForm.status=='INVALID'" class="btn btn-default">Submit</button>
+                  &nbsp;&nbsp;
+                  <button type="reset" (click)="resetForm()" class="btn btn-default">Reset</button>
+                  </div>
+                </div>
+            </form>
+        </section>
+               
+                <footer>
+   
+                    <div class="container-fluid padding">
+                    <div class="row padding text-center">
+                      <div class="col-md-4">
+                          <hr class="hrTag">
+                          <h5> Author </h5>
+                        <hr class="hrTag">
+                        <p>Prasad Pai</p>
+                        <p>prashadmaroor12@gmail.com</p>
+                      </div>
+                      <div class="col-md-4">
+                          <hr class="hrTag">
+                          <h5>Working Days</h5>
+                          <hr class="hrTag">
+                          <p><strong>Monday-Friday:</strong> Open</p>
+                          <p><strong>Saturday-Sunday:</strong> Closed</p>
+                        </div>
+                        <div class="col-md-4">
+                            <hr class="hrTag">
+                            <h5>Work Locations</h5>
+                            <hr class="hrTag">
+                            <p>Mangaluru</p>
+                            <p>Kolkata</p>
+                          </div>
+                          <div class="col-12">
+                              <hr class="hrTag">
+                              <p>&copy; CopyRight 2018</p>
+                              <hr class="hrTag">
+                            </div>
+                </div>
+                </div>
+  </footer>              
+
+
+{{jsonForm.controls.value  | json}}

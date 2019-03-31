@@ -1,0 +1,54 @@
+th 	    {
+    border: 3px solid #dddddd;
+    background-color:#0080ff;
+    color:white;
+    font-size: 20px;
+   }
+  
+li strong{
+display: inline-block;
+padding: 10px;
+color: #0080ff;
+}  
+
+
+  td 	   	{
+       border: 3px solid #dddddd;
+       text-align: left;
+       padding: 8px;
+       color:black;    
+   }
+
+
+
+  .navbar {
+    padding: 0.8rem;
+  }
+  
+  .navbar-nav li{
+    padding-right: 20px;
+  }
+  
+  .nav-link{
+    font-size: 1.1rem !important;
+  }
+
+  .hrTag{
+            border-top: 1px solid #d5d5d5;
+            width:75%;
+            margin-top:0.8rem;
+            margin-bottom:1rem;
+          }
+          
+          header{
+            background-color:#20B2AA;
+            color:white; 
+            padding:10px;
+            font-size:38px;
+          }
+          footer{
+            background-color:#3f3f3f;
+            color:#d5d5d5;
+            padding-top:2rem;
+          }
+          

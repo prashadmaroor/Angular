@@ -1,0 +1,68 @@
+<header>
+  <h1><strong>Active Users</strong></h1>	
+</header>
+
+<br>
+
+
+<article class="table-responsive">      
+<table class="table table-striped table-hover table-condensed table-bordered">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>User ID</td>
+      <td>Title</td>
+      <td>Body</td>
+      <td>Update</td>
+      <td>Delete</td>
+    </tr>
+  </thead>
+  
+  <tr *ngFor="let result of data">
+    <td><a [routerLink]="['/GET/posts/',result.id]">{{result.id}}</a></td>
+    <td>{{result.userId}}</td>
+    <td>{{result.title}}</td>
+    <td>{{result.body}}</td>
+    <td><a [routerLink]="['/PUT/posts/',result.id]">  <button type="button" class="btn btn-success">Edit</button> </a> </td>
+    <td><button type="button" class="btn btn-danger"   (click)="deleteDataViaHttpDelete(result.id)">x </button> </td>
+  </tr>
+  </table>
+  </article>
+
+ 
+  <br>
+  
+  <footer>
+    <div class="container-fluid padding">
+    <div class="row padding text-center">
+      <div class="col-md-4">
+          <hr class="hrTag">
+          <h5> Author </h5>
+        <hr class="hrTag">
+        <p>Prasad Pai</p>
+        <p>prashadmaroor12@gmail.com</p>
+      </div>
+      <div class="col-md-4">
+          <hr class="hrTag">
+          <h5>Working Days</h5>
+          <hr class="hrTag">
+          <p><strong>Monday-Friday:</strong> Open</p>
+          <p><strong>Saturday-Sunday:</strong> Closed</p>
+        </div>
+        <div class="col-md-4">
+            <hr class="hrTag">
+            <h5>Work Locations</h5>
+            <hr class="hrTag">
+            <p>Mangaluru</p>
+            <p>Kolkata</p>
+          </div>
+          <br>
+          <div class="col-12">
+              <hr class="hrTag">
+              <p>&copy; CopyRight 2018</p>
+              <hr class="hrTag">
+            </div>
+</div>
+</div>
+</footer>              
+
